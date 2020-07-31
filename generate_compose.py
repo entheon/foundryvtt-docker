@@ -7,6 +7,8 @@ import subprocess
 
 
 def run(*args, **kwargs):
+    print("Command: {}".format(args))
+
     sys.stdout.flush()
     try:
         return subprocess.run(args, shell=False, check=True, cwd=os.path.join(os.path.dirname(__file__), ".."), encoding='utf-8', **kwargs)
