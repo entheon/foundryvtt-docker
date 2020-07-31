@@ -8,3 +8,9 @@ Generating hashed password for Traefik: https://medium.com/@techupbusiness/add-b
 ```
 echo $(htpasswd -nbB <USER> "<PASS>") | sed -e s/\\$/\\$\\$/g
 ```
+
+Additional Steps:
+1. Enable s3 support
+2. Enable audio / video support
+
+Both are options under `foundrydata/Config`
