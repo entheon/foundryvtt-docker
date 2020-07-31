@@ -14,3 +14,7 @@ Additional Steps:
 2. Enable audio / video support
 
 Both are options under `foundrydata/Config`
+
+For s3 support, add `s3.json` with IAM credentials and configure it in Foundry
+
+For audio / video, edit `foundrydata/Config/options.json` and change `proxySSL: false` to `proxySSL: true`
