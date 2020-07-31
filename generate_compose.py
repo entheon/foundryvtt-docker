@@ -3,6 +3,7 @@
 import os
 import sys
 import yaml
+import argparse
 import subprocess
 
 
@@ -21,8 +22,13 @@ def run(*args, **kwargs):
         ]))
         raise
 
-def get_config(files):
+def get_config(files, env=None):
     params = ["docker-compose"]
+
+    if env:
+        params.append("--env-file")
+        params.append(env)
+
     for file in files:
         params.append("--file")
         params.append(file)
@@ -34,6 +40,13 @@ def get_config(files):
     return process.stdout
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="Generate docker-compose.yml for FoundryVTT")
+    parser.add_argument(
+        "--env", action="store", default=None,
+        help="Use env file with docker-compose")
+    args = parser.parse_args()
+
     # Concatenate all three compose files together for ease of use
     root_dir = os.path.dirname(os.path.abspath(__file__))
     files = [
@@ -44,7 +57,7 @@ def main():
 
     compose_file_path = os.path.join(root_dir, "docker-compose.yml")
     with open(compose_file_path, "w") as compose_file:
-        compose_config = get_config(files=files)
+        compose_config = get_config(files=files, env=args.env)
         compose_file.write(compose_config)
 
 
