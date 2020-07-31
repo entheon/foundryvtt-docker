@@ -20,7 +20,7 @@ def run(*args, **kwargs):
         raise
 
 def get_config(files):
-    params = []
+    params = ["docker-compose"]
     for file in files:
         params.append("--file")
         params.append(file)
