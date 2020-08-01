@@ -9,8 +9,8 @@ services:
     networks:
       - proxy
     volumes:
-      - ${HOME}/foundrydata:/data/foundryvtt
-      - ${HOME}/foundrydl:/host
+      - ${HOME}/foundry/data:/data/foundryvtt
+      - ${HOME}/foundry/latest:/host
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
