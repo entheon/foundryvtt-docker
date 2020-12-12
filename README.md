@@ -33,7 +33,7 @@ FOUNDRY_PASSWORD=<foundryvtt.com password>
 FOUNDRY_ADMIN_KEY=<foundry admin key>
 ```
 
-Note: You must wrap the domains with `!
+Note: You must wrap the domains with `
 
 6. Run generate_compose
 
