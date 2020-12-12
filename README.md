@@ -5,7 +5,7 @@ Courtesy of: https://benprice.dev/posts/fvtt-docker-tutorial/
 
 # Setup
 1. Clone the repo
-2. Make and edit permissions to `acme.json`
+2. Create and edit permissions to `acme.json`
 
 ```
 cd traefik
@@ -21,7 +21,7 @@ chmod 600 acme.json
 echo $(htpasswd -nbB <USER> "<PASS>") | sed -e s/\\$/\\$\\$/g
 ```
 
-5. Make and fill in `.env` file with:
+5. Create and fill in `.env` file with:
 
 ```
 MONITOR_DOMAIN=<traefik domain>
