@@ -12,7 +12,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ${HOME}/portainer_data:/data
+      - ${HOME}/Data/portainer_data:/data
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"

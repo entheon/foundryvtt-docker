@@ -32,7 +32,7 @@ services:
     networks:
       - proxy
     volumes:
-      - ${HOME}/foundry/data:/data
+      - ${HOME}/Data/foundry/data:/data
     environment:
       - FOUNDRY_USERNAME=${FOUNDRY_USERNAME}
       - FOUNDRY_PASSWORD=${FOUNDRY_PASSWORD}
