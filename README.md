@@ -69,7 +69,7 @@ docker-compose up -d
 Create a crontab job and paste in the following:
 
 ```
-0 2 * * 4 tar -cf /home/<user>/foundry/backups`date +\%F`.tar /home/<user>/foundry/data
+0 2 * * 4 sudo tar -cf /home/<user>/foundry/backups/foundry_`date +\%F`.tar /home/<user>/foundry/data
 ```
 
 Note: The above cron job creates an archive every Thursday at 2am.
