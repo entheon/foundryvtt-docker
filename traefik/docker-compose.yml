@@ -17,7 +17,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik.yml:/traefik.yml:ro
       - ./acme.json:/acme.json
-      # - ./rules.toml/rules.toml
+      # - ./rules.toml:/rules.toml\
+    # command:
+      # - "--providers.file=true"
+      # - "--providers.file.filename=/rules.toml"
+
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
@@ -31,17 +35,6 @@ services:
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.tls.certresolver=http"
       - "traefik.http.routers.traefik-secure.service=api@internal"
-      # - "--providers.file=true"
-      # - "--providers.file.filename=/rules.toml"
-
-  whoami:
-    # A container that exposes an API to show its IP address
-    image: containous/whoami:latest
-    container_name: whoami
-    networks:
-      - proxy
-    labels:
-      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
 
 networks:
   proxy:
