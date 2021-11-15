@@ -17,10 +17,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik.yml:/traefik.yml:ro
       - ./acme.json:/acme.json
-      # - ./rules.toml:/rules.toml\
-    # command:
-      # - "--providers.file=true"
-      # - "--providers.file.filename=/rules.toml"
+      # - ./rules.toml:/rules.toml
 
     labels:
       - "traefik.enable=true"
