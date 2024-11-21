@@ -3,6 +3,9 @@ Docker version of Foundry VTT
 
 Courtesy of: https://benprice.dev/posts/fvtt-docker-tutorial/
 
+> [!NOTE]
+> This repo is no longer being updated, as I've moved this to my personal home setup, found [here](https://github.com/ryanliu6/focus).
+
 # Setup
 1. Clone the repo
 2. Create and edit permissions to `acme.json`
